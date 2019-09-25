@@ -18,9 +18,9 @@
 5. Database username
 6. Database password
 7. Database name (basically the name that contains all your tables)
-##8. Instructions on how to use the above information.
+8. Instructions on how to use the above information.
 <br>a. Download key1.pem
-<br>b. sudo chmod 400 path to pem
+<br>b. sudo chmod 400 "path to pem"
 
 # Most important things to Remember
 ## These values need to kept update to date throughout the semester. <br>
