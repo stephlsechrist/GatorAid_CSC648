@@ -22,7 +22,7 @@
 <br>a. Download key1.pem
 <br>b. ```sudo chmod 400 "path to pem"```
 <br>c. ssh in with 
-```ssh -i "path/to/pem" "IP"```
+```ssh -i "path/to/pem" "SSH username"```
 
 # Most important things to Remember
 ## These values need to kept update to date throughout the semester. <br>
