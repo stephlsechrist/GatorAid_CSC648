@@ -18,6 +18,15 @@
 7. Database name (basically the name that contains all your tables)
 8. Instructions on how to use the above information.
 
+1. ec2-3-19-75-170.us-east-2.compute.amazonaws.com/
+2. ubuntu@ec2-3-19-75-170.us-east-2.compute.amazonaws.com/
+3. Uploaded key to credentials as key1.ppk
+4.
+5.
+6.
+7.
+8. 
+
 # Most important things to Remember
 ## These values need to kept update to date throughout the semester. <br>
 ## <strong>Failure to do so will result it points be deducted from milestone submissions.</strong><br>
