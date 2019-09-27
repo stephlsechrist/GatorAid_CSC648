@@ -8,11 +8,11 @@
 # Below is a list of items required. Missing items will causes points to be deducted from multiple milestone submissions.
 
 1. Server URL or IP
-<br>ec2-3-19-75-170.us-east-2.compute.amazonaws.com
+<br>ec2-13-52-181-0.us-west-1.compute.amazonaws.com
 2. SSH username
-<br>ubuntu@ec2-3-19-75-170.us-east-2.compute.amazonaws.com
+<br>ubuntu@ec2-13-52-181-0.us-west-1.compute.amazonaws.com
 3. SSH password or key.
-<br>Uploaded key to credentials as key1.ppk
+<br>Uploaded key to credentials as NewKey.pem
 4. Database URL or IP and port used.
     <br><strong> NOTE THIS DOES NOT MEAN YOUR DATABASE NEEDS A PUBLIC FACING PORT.</strong> But knowing the IP and port number will help with SSH tunneling into the database. The default port is more than sufficient for this class.
 5. Database username
