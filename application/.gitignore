@@ -1,0 +1,4 @@
+#Ignore Files
+nohup.out
+package-lock-json
+package.json
