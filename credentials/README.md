@@ -8,9 +8,9 @@
 # Below is a list of items required. Missing items will causes points to be deducted from multiple milestone submissions.
 
 1. Server URL or IP
-<br>3.19.75.170
+<br>ec2-18-223-110-29.us-east-2.compute.amazonaws.com
 2. SSH username
-<br>ubuntu@3.19.75.170
+<br>ubuntu@ec2-18-223-110-29.us-east-2.compute.amazonaws.com
 3. SSH password or key.
 <br>Uploaded key to credentials as key1.pem
 4. Database URL or IP and port used.
