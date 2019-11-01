@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gator Aid</title>
+    <link rel="stylesheet" href="/assets/css/fontawesome-all.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/modal.css">
+    <link rel="stylesheet" href="/assets/css/home.css">
+</head>
+
+<body>
+<div id="page-container">
+    <div id="content-wrap">
+        <header>
+            <div class="logo-wrapper text-center">
+                <div class="disclaimer">
+                    <h6>[SFSU Software Engineering Project CSC 648-848, Fall 2019.  For Demonstration Only]</h6>
+                </div>
+                <div class="logo">
+                    <a href="./index.html"><img src="" alt="">Logo</a>
+                </div>
+            </div>
+        </header>
+
+            <div class="header-divider"></div>
+            <form action="/search" method="post" enctype="application/x-www-form-urlencoded">
+
+            <div class="search-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-5 remove-padding-right">
+                            <select class="custom-select" name="category">
+                                <option selected value=0>All</option>
+                                <option value="Books">Books</option>
+                                <option value="Electronics">Electronics</option>
+                                <option value="Furniture">Furniture</option>
+                                <option value="Tutoring">Tutoring</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-7 remove-padding-left">
+                            <div class="form-inline md-form form-md">
+                                <input id="search-bar-input" name="search" class="form-control form-control-md w-100" type="text" placeholder="Search" aria-label="Search">
+                                <button type="submit" class='search-link'>
+                                    <div class="search-icon"><i class="fas fa-search" aria-hidden="true"></i></div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </form>
+
+            <nav class="navbar navbar-expand-lg navbar-light container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+        <div class="container">
+            <% for(var i=0;i<result.length;i++){ %>
+            <div class="card " style="width: 18rem;">
+                <img src="<%= result[i].photo_url %>" class="card-img-top" alt="loadind error">
+                <div class="card-body">
+                    <h5 class="card-title"><%= result[i].name %></h5>
+                    <p class="card-text"><%= result[i].description %></p>
+
+                </div>
+            </div><br>
+            <%}%>
+        </div>
+
+
+                <script src="/assets/js/jquery-3.4.1.min.js"></script>
+                <script src="/assets/js/popper.js"></script>
+                <script src="/assets/js/bootstrap.min.js"></script>
+                <script src="/assets/js/index.js"></script>
+    </div>
+</div>
+</body>
+
+</html>
