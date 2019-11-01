@@ -41,9 +41,22 @@ router.get('/search/:query', async (req, res) => {
     let { query } = req.params
     query = query + '%'
     query = query.toLowerCase()
-    
-    let response = await db.query(`SELECT * FROM products WHERE LOWER (products.name) LIKE :query `, { replacements: { query } })
-    res.send(response[0])
+    var cat=req.query.category.toLowerCase();
+    let response=[];
+    if(req.query.category=="0"){
+        response = await db.query(`SELECT products.user_id,products.name,products.description,products.price,products.category,product_photos.photo_url  FROM
+   products
+RIGHT JOIN product_photos ON products.product_id = product_photos.product_id `)
+
+    }
+    else {
+        response = await db.query(`SELECT products.user_id,products.name,products.description,products.price,products.category,product_photos.photo_url  FROM
+   products
+RIGHT JOIN product_photos ON products.product_id = product_photos.product_id WHERE LOWER (products.name) LIKE :query AND LOWER (products.category) LIKE :cat` , { replacements: {query: query,cat:cat } })
+
+    }
+       var result=response[0];
+    res.status(200).json(result);
 })
 
 // Post photos to product
