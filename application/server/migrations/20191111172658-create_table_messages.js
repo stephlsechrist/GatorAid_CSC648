@@ -2,22 +2,32 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    /*
-      Add altering commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.createTable('users', { id: Sequelize.INTEGER });
-    */
+    return queryInterface.sequelize.query('CREATE EXTENSION IF NOT EXISTS "uuid-ossp";')
+    .then(() => {
+      return queryInterface.createTable(
+        'messages',
+        {
+          message_id: {
+            type: Sequelize.UUID,
+            foreignKey: true,
+            allowNull: false
+          },
+          sending_user_id: {
+            type: Sequelize.UUID,
+            foreignKey: true,
+            allowNull: false
+          },
+          receiving_user_id: {
+            type: Sequelize.UUID,
+            foreignKey: true,
+            allowNull: false
+          },
+        }
+      )
+    })
   },
 
   down: (queryInterface, Sequelize) => {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.dropTable('users');
-    */
+    return queryInterface.dropTable('messages')
   }
 };
