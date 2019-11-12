@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gator Aid</title>
+    <link rel="stylesheet" href="css/fontawesome-all.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+    <div id="page-container">
+        <div id="content-wrap">
+            <header>
+                <div class="logo-wrapper text-center">
+                    <div class="disclaimer">
+                        <h6>[SFSU Software Engineering Project CSC 648-848, Fall 2019.  For Demonstration Only]</h6>
+                    </div>
+                    <div class="logo">
+                        <a href="./index.html"><img src="img/333.PNG" alt=""></a>
+                    </div>
+                </div>
+
+                <div class="header-divider"></div>
+
+                <div class="search-bar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-3 col-5 remove-padding-right">
+                                <select class="custom-select">
+                                    <option selected value=0>All</option>
+                                    <option value="1">Books</option>
+                                    <option value="2">Electronics</option>
+                                    <option value="3">Furniture</option>
+                                    <option value="4">Tutoring</option>
+                                    <option value="5">Other</option>
+                                </select>
+                            </div>
+                            <div class="col-md-9 col-sm-9 col-7 remove-padding-left">
+                                <form class="form-inline md-form form-md">
+                                    <input id="search-bar-input" class="form-control form-control-md w-100" type="text" placeholder="Search" aria-label="Search">
+                                    <a class='search-link' href="./search.html">
+                                        <div class="search-icon"><i class="fas fa-search" aria-hidden="true"></i></div>
+                                    </a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="navbar navbar-expand-lg navbar-light container">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <img class="close" src="img/close.svg" alt="">
+                        <ul class="navbar-nav d-flex justify-content-center">
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="./sell.html"><span>Sell</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./courseNumber.html"><span>Find Books By Course Number
+                                        <span class="sr-only">(current)</span></span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./index.html"><span>Home</span></a>
+                            </li>
+                            <li class="nav-item user">
+                                <a class="nav-link" href=""><span>Username</span></a>
+                                <div class="dropdown">
+                                    <button class="select-btn btn dropdown-toggle" type="button" id="dropdownMenuButtonCategoryUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonCategoryUser">
+                                        <a class="dropdown-item" href="admin_listing_review.html">List of Posts</a>
+                                        <a class="dropdown-item" href="admin_view_existing.html">Delete Listing(Testing)</a>
+                                        <a class="dropdown-item" href="admin_view_listing.html">Approve/Disapprove(Testing)</a>
+                                        <a class="dropdown-item" href="#">Listing Requests</a>
+                                        <a class="dropdown-item" href="#">Messages</a>
+                                        <a class="dropdown-item" href="#">Account Info</a>
+                                        <a class="dropdown-item" href="#">Sign out</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+
+            <section class="view-listing">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Title of Post</h3>
+                        </div>
+                    </div>
+                    <div class="row content">
+                        <div id="carouselExampleIndicators" class="carousel slide col-md-5" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100 img-thumbnail" src="" alt>
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100 img-thumbnail" src="" alt>
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100 img-thumbnail" src="" alt>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                        <div class="row nested-row">
+                            <div class="col-md-2 col-sm-2 col-2">
+                                <p>Price: </p>
+                            </div>
+
+                            <div class="col-md-9 col-sm-9 col-8">
+                                <p>$ 38.99</p>
+                            </div>
+                            <div class="col-md-3 col-sm-4">
+                                <p>Description: </p>
+                            </div>
+                            <div class="col-md-9 col-sm-8 desc-text">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis praesentium voluptas atque assumenda itaque, ea culpa aut in eveniet maxime molestiae explicabo error iste nihil ab tenetur ipsum odit aliquam? </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-12 item-approve">
+                            <button class="btn btn-primary">
+                                Approve
+                            </button>
+                        </div>
+                        <div class="col-md-6 col-12 item-reject">
+                            <button class="btn btn-primary">
+                                Reject
+                            </button>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+        </div>
+
+        </section>
+
+        <footer>
+            <div class="container">
+                <a href="AboutMePages/LandingPageVersion1.html">About Us</a>
+                <span>&copy; 2019 All rights reserved </span>
+                <a href="">Contact Us</a>
+            </div>
+        </footer>
+
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/index.js"></script>
+    </div>
+</body>
+
+</html>
