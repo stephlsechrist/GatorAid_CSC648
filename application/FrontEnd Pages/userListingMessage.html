@@ -1,9 +1,12 @@
 <!--
 Author: Jackie Huang
 
-When an admin is logged in, he/she can check this page for listing requests.
-These can be posts to be approved/disapproved for posting, or posts that have 
-been flagged as inappropriate and may need to be deleted.
+User view of message center.
+Log in is not implemented yet on our prototype, so this page allows us
+to simulate what the view of the message center would be.
+Page accessed by clicking "Messages" from Username's drop-down menu.
+Here, the user will be able to see all messages that buyers sent after they had 
+filled out and submitted from message_seller.html.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -78,11 +81,8 @@ been flagged as inappropriate and may need to be deleted.
                                     <button class="select-btn btn dropdown-toggle" type="button" id="dropdownMenuButtonCategoryUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonCategoryUser">
-                                        <a class="dropdown-item" href="admin_listing_review.html">List of Posts</a>
-                                        <a class="dropdown-item" href="admin_view_existing.html">Delete Listing(Testing)</a>
-                                        <a class="dropdown-item" href="admin_view_listing.html">Approve/Disapprove(Testing)</a>
-                                        <a class="dropdown-item" href="#">Listing Requests</a>
-                                        <a class="dropdown-item" href="#">Messages</a>
+                                        <a class="dropdown-item" href="userListingMessage.html">Listing Requests</a>
+                                        <a class="dropdown-item" href="userListingMessage.html">Messages</a>
                                         <a class="dropdown-item" href="#">Account Info</a>
                                         <a class="dropdown-item" href="#">Sign out</a>
                                     </div>
@@ -102,40 +102,40 @@ been flagged as inappropriate and may need to be deleted.
                         <div class="col-md-2 col-sm-4 col-5">
                             <select id="sort-by" class="custom-select">
                                 <option selected>Date</option>
-                                <option value="1">Price</option>
+                                <option value="1">Status</option>
                             </select>
                         </div>
 
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th scope="col">User</th>
                                     <th scope="col">Listing</th>
-                                    <th scope="col">Type</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Messages</th>
                                     <th scope="col">Date</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th scope="row">Jacob</th>
+                                    <th scope="row">Example1</th>
                                     <td></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">Mark</th>
+                                    <th scope="row">Example2</th>
                                     <td></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">Dave</th>
+                                    <th scope="row">Example3</th>
                                     <td></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">Mike</th>
+                                    <th scope="row">Example4</th>
                                     <td></td>
                                     <td></td>
                                     <td></td>

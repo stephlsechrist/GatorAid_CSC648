@@ -1,3 +1,22 @@
+<!--
+Author: Jackie Huang
+
+Log in is not implemented yet on our prototype, so this page allows us
+to simulate what the view of Gator Aid would be for an admin.
+To right of admin username, there is a drop-down menu.
+Clicking "List of Posts" goes to admin_listing_review.html
+Clicking "Delete Listing(Testing)" goes to admin_view_existing.html
+Clicking "Approve/Disapprove(Testing)" goes to admin_view_listing.html
+
+In future, these views would be accessed from admin_listing_review.html 
+depending on what kind of request is to be dealt with.
+ - a listing that has been flagged as inappropriate by a user will be sent
+   to admin_listing_review.html, and when admin clicks on listing title,
+   he/she will see admin_view_existing view
+ - a listing that has been submitted by a user via sell.html needs to approved
+   by the admin, and when he/she clicks the listing title, he/she will see 
+   admin_view_listing view
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +38,7 @@
             <header>
                 <div class="logo-wrapper text-center">
                     <div class="disclaimer">
-                        <h6>[SFSU Software Engineering Project CSC 648-848, Fall 2019.  For Demonstration Only]</h6>
+                        <h2>[SFSU Software Engineering Project CSC 648-848, Fall 2019.  For Demonstration Only]</h2>
                     </div>
                     <div class="logo">
                         <a href="./index.html"><img src="img/333.PNG" alt=""></a>
@@ -30,7 +49,7 @@
                 <div class="search-bar">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-3 col-sm-3 col-5 remove-padding-right">
+                            <div class="col-md-2 col-sm-3 col-5 remove-padding-right">
                                 <select class="custom-select">
                                     <option selected value=0>All</option>
                                     <option value="1">Books</option>
@@ -40,7 +59,7 @@
                                     <option value="5">Other</option>
                                 </select>
                             </div>
-                            <div class="col-md-9 col-sm-9 col-7 remove-padding-left">
+                            <div class="col-md-10 col-sm-9 col-7 remove-padding-left">
                                 <form class="form-inline md-form form-md">
                                     <input id="search-bar-input" class="form-control form-control-md w-100" type="text" placeholder="Search" aria-label="Search">
                                     <a class='search-link' href="./search.html">
@@ -57,17 +76,14 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <img class="close" src="img/close.svg" alt="">
-                        <ul class="navbar-nav d-flex justify-content-center">
+                        <ul class="navbar-nav d-flex justify-content-around">
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="./sell.html"><span>Sell</span></a>
-                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="./courseNumber.html"><span>Find Books By Course Number
                                         <span class="sr-only">(current)</span></span></a>
                             </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="./index.html"><span>Home</span></a>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./sell.html"><span>Sell</span></a>
                             </li>
                             <li class="nav-item user">
                                 <a class="nav-link" href=""><span>Username(Admin)</span></a>

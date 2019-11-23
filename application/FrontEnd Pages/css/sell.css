@@ -6,6 +6,10 @@
     display: flex;
     justify-content: flex-end;
 }
+.post-listing1 {
+    display: flex;
+    justify-content: flex-start;
+}
 
 .post-listing button {
     background-color: #2e8103;
@@ -13,6 +17,13 @@
     width: 150px;
     color: white;
     margin-top: 15px;
+}
+.post-listing1 button {
+    background-color: #2e8103;
+    border-color: #2e8103;
+    width: 150px;
+    color: white;
+    margin-top: -35px;
 }
 
 .sell .container .row {
