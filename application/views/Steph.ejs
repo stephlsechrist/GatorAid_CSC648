@@ -1,0 +1,89 @@
+<!-- Save the template file into your first name like this(Jackie.html) when you are done -->
+<!DOCTYPE html>
+<html>
+<!-- Insert Tab name on Template -->
+<title>GatorAid</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=720, maximum-scale=1.0">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Lato", sans-serif;
+    }
+
+    body, html {
+        height: 100%;
+        color: #777;
+        line-height: 1.8;
+    }
+
+    /* Create a Parallax Effect */
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    /* First image (Logo. Full height) */
+    .bgimg-1 {
+        /* Change this if you want another background Use url or a picture uploaded */
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/8e/Brown_County_State_Park_banner_Fall_colors.jpg');
+        min-height: 100%;
+    }
+
+    .w3-wide {
+        letter-spacing: 10px;
+    }
+
+    .w3-hover-opacity {
+        cursor: pointer;
+    }
+
+    /* Turn off parallax scrolling for tablets and phones */
+    @media only screen and (max-device-width: 1600px) {
+        .bgimg-1, .bgimg-2, .bgimg-3 {
+            background-attachment: scroll;
+            min-height: 400px;
+        }
+    }
+</style>
+<body>
+
+    <!-- First Parallax Image with Logo Text -->
+    <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+        <div class="w3-display-middle" style="white-space:nowrap;">
+            <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity"><span class="w3-hide-small">Stephanie</span> Sechrist</span>
+        </div>
+    </div>
+
+<!-- Container (About Section) -->
+    <div class="w3-content w3-container w3-padding-64" id="about">
+        <h3 class="w3-center">ABOUT ME</h3>
+        <!-- Add a simple thing that you enjoy in <em></em> -->
+        <p class="w3-center"><em>I love something</em></p>
+
+        <!-- Put a short discription about your life that you want to share in <p></p> -->
+        <p>
+            I am an undergraduate Computer Science student at San Francisco State University. I also work at Out the Door, a Vietnamese restaurant in Pacific Heights. During my free time, I love to read or go for walks around the city. 
+        </p>
+        <div class="w3-row">
+            <div class="w3-col m6 w3-center w3-padding-large">
+                <!-- Put your name in My Name -->
+                <p><b><i class="fa fa-user w3-margin-right"></i>Stephanie Sechrist</b></p><br>
+                <!-- Add a photo about you in <img src="" (Url or a picture uploaded)>     -->
+                <img src="/assets/StephPic.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
+            </div>
+
+            <div class="w3-col m6 w3-hide-small w3-padding-large">
+                <!-- Put another short bio about your life that you want to share  in <p></p>-->
+                <p>
+                <p>
+                    In this team project for CSC648 Software Engineering, I am GitHub master. I've never worked with Git in a team setting where branches are necessary, but I'm excited to learn as much as I can about it! 
+                    In addition to GitHub master, I'll also be a back-end developer and will help with front-end when needed.
+                </p>
+            </div>
+</body>
+</html>
