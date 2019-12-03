@@ -1,0 +1,32 @@
+<div id="page-container">
+  <div id="content-wrap">
+    <section class="message_seller">
+      <div class="container">
+        <form ngNativeValidate [formGroup]="messageForm" (ngSubmit)="sendMsg()">
+
+          <div class="row">
+            <div class="col-md-6 col-sm-12 col-12 title">
+              <span>Title</span>
+            </div>
+            <div class="col-md-6 col-sm-12 col-12 sell-input">
+              <input formControlName="title" type="text" placeholder="Re: Title of Post" class="form-control form-control-md w-100" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-sm-12 col-12 title">
+              <p>Message</p>
+            </div>
+            <div class="col-md-6 col-sm-12 col-12 sell-input">
+              <textarea formControlName="message" name="message" id="" cols="30" rows="5" required></textarea>
+            </div>
+            <div class="col-md-12 col-md-12 col-12 send-message">
+              <button class="btn btn-primary" type="submit">Message Seller  <i *ngIf="isLoading" class="fa fa-spinner fa-pulse icon-margin-right"> </i></button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </section>
+  </div>
+</div>
+
