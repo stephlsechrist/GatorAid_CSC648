@@ -1,0 +1,29 @@
+
+<section class="course-number">
+  <div class="container">
+   <div class="row">
+     <div class="col-md-6 m-auto">
+       <h3>Change Password </h3>
+       <br><br>
+       <form ngNativeValidate [formGroup]="userForm" (ngSubmit)="save()">
+         <div class="login-step md-form mb-5">
+           <label data-error="wrong" data-success="right" for="defaultForm-username-regg"> Your Current Password </label>
+           <input required type="password" id="defaultForm-username-regg" class="form-control validate" formControlName="currentPassword">
+         </div>
+         <div class="login-step md-form mb-5">
+           <label data-error="wrong" data-success="right" for="defaultForm-username-regg"> New Password </label>
+           <input required type="password" id="defaultForm-username-regg" class="form-control validate" formControlName="newPassword">
+         </div>
+         <div class=" d-flex justify-content-center flex-column text-center">
+           <p class="text-success font-weight-bold"> {{message}}</p>
+           <div class="register-btn">
+             <button type="submit" class="btn btn-default"> Change Password</button>
+           </div>
+         </div>
+       </form>
+     </div>
+
+   </div>
+
+  </div>
+</section>
