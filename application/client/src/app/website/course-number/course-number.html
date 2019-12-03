@@ -1,0 +1,31 @@
+
+<section class="course-number">
+
+  <div class="container">
+    <form [formGroup]="searchForm" (ngSubmit)="submitSearch()">
+
+    <div class="row justify-content-center">
+      <div class="col-md-2 col-sm-3 col-4 department">
+        <label>Department</label>
+        <p>ex: BUS, CSC, BIO</p>
+      </div>
+      <div class="col-md-3 col-sm-9 col-8 department-input">
+        <input formControlName="department" type="text" class="w-100 form-control form-control-md">
+      </div>
+      <div class="col-md-2 col-sm-3 col-4 c-number">
+        <label>Course Number</label>
+      </div>
+      <div class="col-md-3 col-sm-9 col-8 c-number-input">
+        <input formControlName="courseNumber" type="text" class="w-100 form-control form-control-md">
+      </div>
+      <div class="col-md-2 col-sm-12 col-12 course-number-search">
+        <a class='search-link' (click)="submitSearch()" style="cursor: pointer">
+          <div class="search-icon"><i class="fas fa fa-search" aria-hidden="true"></i></div>
+        </a>
+      </div>
+    </div>
+    </form>
+  </div>
+
+  <search-app></search-app>
+</section>
