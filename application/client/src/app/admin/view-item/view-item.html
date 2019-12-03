@@ -1,0 +1,28 @@
+<header-app></header-app>
+
+
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title"><span> Details</span>
+        <button class="btn btn-primary float-right" routerLink="/admin/edit-item/{{item.id}}"> Edit </button>
+      </h2>
+      <div class="text-center">
+        <i class="fa fa-spinner fa-pulse spin-loader" [hidden]="!isLoading"></i>
+      </div>
+      <ul class="list-group" *ngIf="item.id">
+        <li class="list-group-item"><b>Picture: </b>  <img src="{{item.picture}}" style="max-height: 300px;max-width: 300px" class="pic"> </li>
+        <li class="list-group-item"><b>Title: </b>  {{item.title}} </li>
+        <li class="list-group-item"><b>Description: </b>  {{item.desc}} </li>
+        <li class="list-group-item"><b>Price: </b>  {{item.price}} </li>
+        <li class="list-group-item"><b>Category: </b>  {{item.category.name}} </li>
+        <li class="list-group-item"><b>Uploaded By: </b>  {{item.user.email}} </li>
+        <li class="list-group-item"><b>Status: </b>  {{item.isActive? 'Active': 'Not Active'}} </li>
+        <li class="list-group-item"><b>isAppropriate: </b>  {{item.isAppropriate? 'Appropriate': 'Not Appropriate'}} </li>
+        <li class="list-group-item"><b>Date: </b>  {{item.createdAt | date: 'medium'}} </li>
+        <li class="list-group-item"><b>User Email: </b>  </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
