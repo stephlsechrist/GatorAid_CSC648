@@ -1,0 +1,161 @@
+.buy-or-sell .row {
+    margin: 15px 0 20px;
+}
+
+.buy-or-sell .title,
+.recent h4 {
+    color: #707070
+}
+
+.buy-or-sell .title h3 {
+    margin: 30px 0 20px 0;
+}
+
+.recent h4 {
+    padding-left: 15px;
+    margin: 55px 0 0 0;
+}
+
+.recent-items {
+    margin: 15px 0;
+}
+
+.img-thumbnail {
+    width: 300px;
+    height: 400px !important;
+    background-color: #234F0C
+}
+
+.product-desc {
+    margin: 0;
+    font-weight: bold;
+    color: #505050;
+}
+
+.price {
+    margin: 5px 0;
+    color: #505050;
+}
+
+.buy-now-btn {
+    width: 96px !important;
+    height: 24px !important;
+    background-color: #2E8103 !important;
+    color: white !important;
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    -ms-border-radius: 0 !important;
+    -o-border-radius: 0 !important;
+    font-size: 14px !important;
+    padding: 0 !important;
+}
+
+.buy-now-btn:hover {
+    color: white !important
+}
+
+
+
+.star {
+  font-size: 1.3rem;
+  color: #b0c4de;
+}
+
+.filled {
+  color: #FF931A;
+}
+
+.bad {
+  color: #deb0b0;
+}
+
+.filled.bad {
+  color: #ff1e1e;
+}
+
+.dz-success-mark {
+  display: none;
+}
+
+.dz-error-mark {
+  display: none;
+}
+
+.dp-box {
+  cursor: pointer;
+  border-style: dashed;
+  height: 140px;
+  width: 100%;
+  border: 1px solid #ADADAD;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  border-style: dashed;
+  text-align: center;
+
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 450px;
+  max-width: 100%;
+  padding: 25px;
+  border: 2px dashed #2e8103;
+  background-color: rgba(46, 129, 3, 0.06);
+  border-radius: 3px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+
+
+}
+
+.dz-image {
+  text-align: center;
+  img {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+  }
+}
+
+.dz-details {
+  display: none;
+}
+
+.spin-loader {
+  text-align: center;
+  font-size: 30px;
+  position: fixed;
+}
+
+.add-more {
+  color: #057AEA;
+  font-size: 12px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: green !important;
+  color: white;
+  border: 1px solid green !important;
+
+}
+
+.btn-primary {
+  background-color: green !important;
+  color: white;
+  border: 1px solid green !important;
+}
+
+.upload-text {
+  position: absolute;
+  top: 56px;
+  z-index: -1;
+  left: 82px;
+}
