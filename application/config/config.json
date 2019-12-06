@@ -1,0 +1,42 @@
+{
+  "specialization": {
+  },
+  "middleware": {
+    "static": {
+      "module": {
+        "arguments": [
+          "path:./.build"
+        ]
+      }
+    },
+    "router": {
+      "module": {
+        "arguments": [
+          {
+            "directory": "path:./app/controllers"
+          }
+        ]
+      }
+    },
+    "authentication": {
+      "enabled": true,
+      "priority": 100,
+      "route": "\/api\/v1((?!$))((?!\/categories))((?!\/users\/signup))((?!\/users\/forgot))((?!\/users/admin\/login))((?!\/users\/login))*",
+      "module": {
+        "name": "path:./app/lib/auth"
+      }
+    }
+  },
+  "gmail": {
+    "service": "gmail",
+    "transportMethod": "SMTP",
+    "auth": {
+      "user": "gator.aid.website@gmail.com",
+      "pass": "forgot123my@password"
+    }
+  },
+  "app": {
+    "url": "",
+    "jwtSecret": "asfldjadlfjaasdfasfasf"
+  }
+}
