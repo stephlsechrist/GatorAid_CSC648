@@ -1,0 +1,42 @@
+<div id="page-container">
+  <div id="content-wrap">
+    <section class="search-results">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6 col-sm-6 col-6 d-flex align-items-end">
+            <label>Showing <span class="search-number"> {{items.length}} </span> out of <span
+              class="search-number">{{count}}</span></label>
+          </div>
+          <div class="col-md-2 col-sm-2 col-2 d-flex align-items-end sort-by-title">
+            <label>Sort By</label>
+          </div>
+          <div class="col-md-2 col-sm-4 col-4">
+            <select id="sort-by" class="custom-select" (change)="sortItems($event)">
+              <option selected value="createdAt">Date</option>
+              <option value="price">Price</option>
+            </select>
+          </div>
+
+        </div>
+      </div>
+      <div class="text-center">
+        <h3> {{message}} </h3>
+        <i *ngIf="isLoading" class="fa fa-spinner fa-pulse icon-margin-right"> </i>
+      </div>
+      <div class="container results">
+          <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-6 recent-items" *ngFor="let item of items">
+              <div class="card">
+                <img src="{{item.picture}}" alt="" class="img-thumbnail">
+                <div class="card-body">
+                  <p class="product-desc card-title" title="{{item.desc}}">    {{ (item.title.length>30)? (item.title | slice:0:30)+'...':(item.title) }}</p>
+                  <p class="price card-text"> ${{item.price}}</p>
+                  <a routerLink="/view-item/{{item.id}}" class="btn buy-now-btn">Buy Now</a>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

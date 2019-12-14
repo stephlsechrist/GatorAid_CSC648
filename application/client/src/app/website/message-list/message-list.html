@@ -1,0 +1,79 @@
+<div id="page-container">
+  <div id="content-wrap">
+    <section class="listing-review">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-1 col-sm-3 col-3 d-flex align-items-end sort-by-title">
+            <label>Sort By</label>
+          </div>
+          <div class="col-md-2 col-sm-4 col-5">
+            <select id="sort-by" class="custom-select" (change)="sort($event)">
+              <option selected value="createdAt">Date</option>
+              <option value="status">Status</option>
+            </select>
+          </div>
+          <table class="table table-striped" *ngIf="msgs.length">
+            <thead>
+            <tr>
+              <th scope="col">Listing</th>
+              <th scope="col">Status</th>
+              <th scope="col">Title</th>
+              <th scope="col">Messages</th>
+              <th scope="col">Date</th>
+              <th scope="col">Send Reply</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let msg of msgs">
+              <th scope="row">{{msg.item.title}}</th>
+              <td>{{msg.status}}</td>
+              <td>{{msg.title}}</td>
+              <td>{{msg.message}}</td>
+              <td>{{msg.createdAt | date: 'medium'}}</td>
+              <td><button class="btn btn-primary btn-sm" (click)="open(editMessage, msg)">Reply</button></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="text-center">
+          <i *ngIf="isLoading" class="fa fa-spinner fa-pulse text-center"> </i>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+
+<ng-template #editMessage let-cc="close" let-dd="dismiss">
+  <div class="modal-header text-center">
+    <p class="modal-title w-100">New Message</p>
+    <button type="button" class="close" aria-label="Close" (click)="dd('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body mx-3">
+    <form ngNativeValidate [formGroup]="messageForm" (ngSubmit)="editMsg(dd)">
+      <div class="login-step md-form mb-5">
+        <label data-error="wrong" data-success="right" for="defaultForm-username-reg">Title</label>
+        <input required type="text" id="defaultForm-username-reg" class="form-control validate" formControlName="title">
+      </div>
+      <div class="login-step md-form mb-5" *ngIf="messageForm.value.receiverId == me.id">
+        <label data-error="wrong" data-success="right" for="defaultForm-username-reg">Status</label>
+        <select class="custom-select" formControlName="status" name="status">
+          <option value="pending">Pending</option>
+          <option value="sold">Sold</option>
+        </select>
+      </div>
+      <div class="login-step md-form mb-5">
+        <label>Message</label>
+        <textarea formControlName="message" name="" id="" cols="30" rows="5"></textarea>
+      </div>
+      <div class=" d-flex justify-content-center flex-column text-center">
+        <div class="register-btn">
+          <button type="submit" class="btn btn-default">Send</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</ng-template>
+

@@ -1,0 +1,27 @@
+<div id="page-container">
+  <div id="content-wrap">
+    <section class="buy-or-sell">
+      <div class="container">
+        <div class="title text-center">
+          <h3>Buy or Sell</h3>
+          <h4>Exclusively for SFSU Students</h4>
+        </div>
+        <div class="recent">
+          <h4>Recent</h4>
+          <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-6 recent-items" *ngFor="let item of items">
+              <div class="card">
+                <img src="{{item.picture}}" alt="" class="img-thumbnail">
+                <div class="card-body">
+                  <p class="product-desc card-title" title="{{item.title}}">    {{ (item.title.length>17)? (item.title | slice:0:17)+'...':(item.title) }}</p>
+                  <p class="price card-text"> ${{item.price}}</p>
+                  <a routerLink="/view-item/{{item.id}}" class="btn buy-now-btn">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

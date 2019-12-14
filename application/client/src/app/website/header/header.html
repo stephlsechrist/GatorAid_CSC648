@@ -1,0 +1,172 @@
+<div class="logo-wrapper text-center">
+  <div class="disclaimer">
+    <h2>[SFSU Software Engineering Project CSC 648-848, Fall 2019.  For Demonstration Only]</h2>
+  </div>
+  <div class="logo">
+    <a routerLink="/"><img src="assets/333.PNG" alt=""></a>
+  </div>
+</div>
+
+<div class="header-divider"></div>
+<div class="search-bar">
+  <div class="container">
+    <form [formGroup]="searchForm" (ngSubmit)="submitSearch()">
+    <div class="row">
+      <div class="col-md-2 col-sm-3 col-5 remove-padding-right">
+        <select id="category-select" class="custom-select" formControlName="categoryId">
+          <option selected value=''>All</option>
+          <option *ngFor="let c of categories" [value]="c.id" >{{c.name}}</option>
+        </select>
+      </div>
+      <div class="col-md-10 col-sm-9 col-7 remove-padding-left">
+          <input maxlength="40" formControlName="search" id="search-bar-input" class="form-control form-control-md w-100" type="text" placeholder="Search" aria-label="Search">
+          <a class='search-link' (click)="submitSearch()" style="position: absolute;right: 18px;top: 3px;">
+            <div class="search-icon" style="cursor: pointer"><i class="fas fa fa-search" aria-hidden="true"></i></div>
+          </a>
+      </div>
+    </div>
+    </form>
+  </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light container">
+  <button class="navbar-toggler cursor-pointer" type="button" (click)="isCollapsed = !isCollapsed" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" [ngClass]="{'open-menu': isCollapsed == false}" id="navbarSupportedContent" [ngbCollapse]="isCollapsed">
+    <img class="close cursor-pointer" src="assets/close.svg" alt="" (click)="isCollapsed=!isCollapsed">
+    <ul class="navbar-nav d-flex justify-content-around">
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/course-number"><span>Find Books By Course Number
+                                        <span class="sr-only">(current)</span></span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/add-item"><span>Sell</span></a>
+      </li>
+      <li class="nav-item" *ngIf="!user.username">
+        <a class="nav-link" routerLink="" id="login-btn-gator-aid">
+          <span (click)="open(loginHandle);" *ngIf="!user.username">Log In</span>
+        </a>
+      </li>
+      <li ngbDropdown class="nav-item dropdown" *ngIf="user.username">
+        <a ngbDropdownToggle class="nav-link dropdown-toggle btn-user-primary text-white" id="navbarDropdownMenuLink" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+          Welcome {{user.username}}
+        </a>
+        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+          <a class="dropdown-item" routerLink="/my-items">   <i class="fa fa-book" aria-hidden="true"></i> Books</a>
+          <hr style="margin:0px">
+          <a class="dropdown-item" routerLink="/my-messages">   <i class="fa fa-envelope" aria-hidden="true"></i>  Messages</a>
+          <hr style="margin:0px">
+          <a class="dropdown-item" routerLink="/manage-account">   <i class="fa fa-cog" aria-hidden="true"></i>  Account</a>
+          <hr style="margin:0px">
+          <a class="dropdown-item" routerLink="/" (click)="logout()">
+            <i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<ng-template #loginHandle let-c="close" let-d="dismiss">
+  <div class="modal-header text-center" >
+    <p class="modal-title w-100">Sign in</p>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body mx-3">
+    <form ngNativeValidate [formGroup]="loginForm" (ngSubmit)="login(d)">
+      <div class="login-step md-form mb-5">
+        <label data-error="wrong" data-success="right" for="defaultForm-username-reg">Username</label>
+        <input required type="text" id="defaultForm-username-reg" class="form-control validate" formControlName="username">
+      </div>
+      <div class="password-step md-form mb-5">
+        <label data-error="wrong" data-success="right" for="defaultForm-pass-reg">Your
+          password</label>
+        <input type="password" minlength="8" id="defaultForm-pass-reg" class="form-control validate" formControlName="password" required>
+      </div>
+      <div class=" d-flex justify-content-center flex-column text-center">
+        <p class="text-danger"> {{message}}</p>
+        <div class="register-btn">
+          <button type="submit" class="btn btn-default">Login <i *ngIf="isLoading" class="fa fa-spinner fa-pulse icon-margin-right"> </i></button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class=" d-flex justify-content-center flex-column text-center">
+
+    <div class="forgot-pass">
+      <a  (click)="open(forgotHandle);d('Cross click')" class="cursor-pointer">Forgot Password?</a>
+    </div>
+    <div class="register">
+      <a routerLink="" (click)="d('Cross click');open(signup)">Register</a>
+    </div>
+  </div>
+</ng-template>
+
+{{assignHandle(loginHandle)}}
+<ng-template #signup let-cc="close" let-dd="dismiss">
+  <div class="modal-header text-center">
+    <p class="modal-title w-100">Create New Account</p>
+    <button type="button" class="close" aria-label="Close" (click)="dd('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body mx-3">
+    <form ngNativeValidate [formGroup]="signUpForm" (ngSubmit)="signUp(dd)">
+      <div class="login-step md-form mb-5">
+        <label data-error="wrong" data-success="right" for="defaultForm-email-reg">SFSU
+          e-mail</label>
+        <input required type="email" id="defaultForm-email-reg" class="form-control validate" formControlName="email">
+      </div>
+      <div class="login-step md-form mb-5">
+        <label data-error="wrong" data-success="right" for="defaultForm-username-reggg">Username</label>
+        <input required type="text" id="defaultForm-username-reggg" class="form-control validate" formControlName="username">
+      </div>
+      <div class="password-step md-form mb-5">
+        <label data-error="wrong" data-success="right" for="defaultForm-pass-reggggg">Your
+          password</label>
+        <input type="password" minlength="8" id="defaultForm-pass-reggggg" class="form-control validate" formControlName="password" required>
+      </div>
+      <div class="password-step md-form mb-2">
+        <label data-error="wrong" data-success="right" for="defaultForm-pass-confirm-reg">Confirm
+          password</label>
+        <input type="password" minlength="8" id="defaultForm-pass-confirm-reg" class="form-control validate" formControlName="confirmPassword" required>
+      </div>
+      <div class=" d-flex justify-content-center flex-column text-center">
+        <label class="container-checkbox">I agree to <a routerLink="">Terms & Conditions</a>
+          <input type="checkbox" formControlName="agree">
+          <span class="checkmark"></span>
+        </label>
+        <p class="text-danger"> {{message}}</p>
+        <div class="register-btn">
+          <button type="submit" class="btn btn-default">Register <i *ngIf="isLoading" class="fa fa-spinner fa-pulse icon-margin-right"> </i></button>
+        </div>
+      </div>
+    </form>
+  </div>
+</ng-template>
+
+<ng-template #forgotHandle let-c="close" let-dforgot="dismiss">
+  <div class="modal-header text-center">
+    <p class="modal-title w-100">Forgot Password</p>
+    <button type="button" class="close" aria-label="Close" (click)="dforgot('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body mx-3">
+    <form ngNativeValidate [formGroup]="forgotForm" (ngSubmit)="forgotPassword()">
+      <div class="login-step md-form mb-5">
+        <label data-error="wrong" data-success="right" for="defaultForm-username-reg"> Your Email </label>
+        <input required type="email" id="defaultForm-username-regg" class="form-control validate" formControlName="email">
+      </div>
+      <div class=" d-flex justify-content-center flex-column text-center">
+        <p class="text-success font-weight-bold"> {{message}}</p>
+        <div class="register-btn">
+          <button type="submit" class="btn btn-default">Forgot Password</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</ng-template>

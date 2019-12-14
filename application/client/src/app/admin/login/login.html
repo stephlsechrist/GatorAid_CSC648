@@ -1,0 +1,15 @@
+<form class="form-signin center-body" [formGroup]="userForm" (ngSubmit)="login()">
+  <div class="card">
+    <div class="card-body">
+      <h1 class="h3 mb-3 font-weight-normal"> Sign in</h1>
+      <label class="">Email</label>
+      <input class="form-control" placeholder="Email" autocomplete="false" formControlName="username">
+      <br>
+      <label class="">Password</label>
+      <input type="password" class="form-control" placeholder="Password" autocomplete="false" formControlName="password">
+      <br>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <p class="text-center text-danger">{{message}}</p>
+    </div>
+  </div>
+</form>

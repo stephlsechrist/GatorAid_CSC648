@@ -1,0 +1,47 @@
+<div id="page-container">
+  <div id="content-wrap">
+    <i *ngIf="isLoading" class="fa fa-spinner fa-pulse icon-margin-right text-center"> </i>
+    <section class="listing" *ngIf="item.id">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h3> {{item.title}}</h3>
+          </div>
+        </div>
+        <div class="row content">
+          <div class="col-md-5">
+            <img src="{{item.picture}}" class="img-thumbnail">
+          </div>
+          <div class="row nested-row">
+            <div class="col-md-2 col-sm-2 col-2">
+              <p>Price: </p>
+            </div>
+            <div class="col-md-9 col-sm-9 col-8">
+              <p>$ {{item.price}}</p>
+            </div>
+            <div class="col-md-3 col-sm-4">
+              <p>Description: </p>
+            </div>
+            <div class="col-md-9 col-sm-8 desc-text">
+              <p> {{item.desc}} </p>
+            </div>
+            <div class="col-md-12 item-buy">
+              <a routerLink="/message-seller/{{item.id}}" class="btn btn-primary">
+                Buy
+              </a>
+            </div>
+            <div class="col-md-12 flag">
+              <div>
+                <i class="far fa fa-flag-o" [ngClass]="{'fa-flag-o': item.isAppropriate == true, 'fa-flag':item.isAppropriate == false }"></i>
+                <span class="cursor-pointer" (click)="markFlag()"> &nbsp;Flag as inappropriate</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+
