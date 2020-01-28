@@ -26,6 +26,7 @@
     "@babel/preset-env": "^7.7.4",
     "@ng-bootstrap/ng-bootstrap": "^5.1.4",
     "@types/dropzone": "^5.0.2",
+    "@types/google.analytics": "0.0.40",
     "bluebird": "^3.7.2",
     "bootstrap": "^4.4.1",
     "bunyan": "^1.8.12",
